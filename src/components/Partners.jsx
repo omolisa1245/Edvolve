@@ -84,7 +84,7 @@ export default function Partners() {
 
   return (
     <motion.section
-      className="py-24 bg-white overflow-hidden"
+      className="py-24  bg-white overflow-hidden"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false, amount: 0.2 }}
@@ -135,7 +135,7 @@ export default function Partners() {
           {/* LEFT BUTTON */}
           <button
             onClick={prevSlide}
-            className="absolute -left-8 top-25 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-black/80 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] flex items-center justify-center hover:scale-110 hover:bg-[#D4AF37] hover:text-black transition"
+            className="absolute -left-3 md:-left-8 top-25 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-black/80 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] flex items-center justify-center hover:scale-110 hover:bg-[#D4AF37] hover:text-black transition"
           >
             <ChevronLeft size={20} />
           </button>
@@ -195,7 +195,7 @@ export default function Partners() {
           {/* RIGHT BUTTON */}
           <button
             onClick={nextSlide}
-            className="absolute -right-8 top-25 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-black/80 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] flex items-center justify-center hover:scale-110 hover:bg-[#D4AF37] hover:text-black transition"
+            className="absolute -right-3 md:-right-8 top-25 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-black/80 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] flex items-center justify-center hover:scale-110 hover:bg-[#D4AF37] hover:text-black transition"
           >
             <ChevronRight size={20} />
           </button>
