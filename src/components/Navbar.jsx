@@ -37,13 +37,13 @@ const aboutLinks = [
         path: "/historyPage",
         image: "/about1.jpeg",
     },
-  
+
     {
         name: "Vision & Mission",
         path: "/visionMission",
         image: "/about2.jpeg",
     },
-    
+
     {
         name: "Our Approach",
         path: "/ourApproach",
@@ -84,7 +84,7 @@ const programLinks = [
         path: "/ruralEducational",
         image: "/edu4.jpeg",
     },
-   
+
     {
         name: "MSME Development",
         path: "/MSMEDevelopment",
@@ -136,8 +136,11 @@ export default function Navbar() {
     };
 
     const handleMobileNav = (path) => {
-        router.push(path);
         setMenuOpen(false);
+
+        setTimeout(() => {
+            router.push(path);
+        }, 300); // match menu transition duration
     };
 
 
@@ -240,24 +243,28 @@ export default function Navbar() {
                                 }`}
                         >
                             <ul className="pl-4 text-gray-600 text-sm flex flex-col gap-2">
-                                <li onClick={() => router.push('/services/core')} className="px-4 cursor-pointer hover:bg-blue-100">
-                                    Who We Are
+                                <li onClick={() => handleMobileNav('/aboutPage')} className="px-4 cursor-pointer hover:bg-blue-100">
+                                    About Edvolve
                                 </li>
 
-                                <li onClick={() => router.push('/services/social-events')} className="px-4 cursor-pointer hover:bg-blue-100">
+                                <li onClick={() => handleMobileNav('/visionMission')} className="px-4 cursor-pointer hover:bg-blue-100">
                                     Vision & Mission
                                 </li>
 
-                                <li onClick={() => router.push('/services/corporate-events')} className="px-4 cursor-pointer hover:bg-blue-100">
+                                <li onClick={() => handleMobileNav('/historyPage')} className="px-4 cursor-pointer hover:bg-blue-100">
                                     Our History
                                 </li>
 
-                                <li onClick={() => router.push('/services/memorial')} className="px-4 cursor-pointer hover:bg-blue-100">
+                                <li onClick={() => handleMobileNav('/ourApproach')} className="px-4 cursor-pointer hover:bg-blue-100">
                                     Our Approach
                                 </li>
 
-                                <li onClick={() => router.push('/services/luxury-events')} className="px-4 cursor-pointer hover:bg-blue-100">
-                                    Our Board
+                                <li onClick={() => handleMobileNav('/managementTeamPage')} className="px-4 cursor-pointer hover:bg-blue-100">
+                                    Management Team
+                                </li>
+
+                                <li onClick={() => handleMobileNav('/reportsPublications')} className="px-4 cursor-pointer hover:bg-blue-100">
+                                    Reports & Publications
                                 </li>
 
 
@@ -280,27 +287,25 @@ export default function Navbar() {
                                 }`}
                         >
                             <ul className="pl-4 text-gray-600 text-sm flex flex-col gap-2">
-                                <li onClick={() => router.push('/services/core')} className="px-4 cursor-pointer hover:bg-blue-100">
+                                <li onClick={() => handleMobileNav('/educationEmpowerment')} className="px-4 cursor-pointer hover:bg-blue-100">
                                     Education & Empowerment
                                 </li>
 
-                                <li onClick={() => router.push('/services/social-events')} className="px-4 cursor-pointer hover:bg-blue-100">
+                                <li onClick={() => handleMobileNav('/agrodev')} className="px-4 cursor-pointer hover:bg-blue-100">
                                     Agrodev Initiative
                                 </li>
 
-                                <li onClick={() => router.push('/services/corporate-events')} className="px-4 cursor-pointer hover:bg-blue-100">
+                                <li onClick={() => handleMobileNav('/entrepreneurshipSkills')} className="px-4 cursor-pointer hover:bg-blue-100">
                                     Entrepreneurship & Skills Development
                                 </li>
 
-                                <li onClick={() => router.push('/services/memorial')} className="px-4 cursor-pointer hover:bg-blue-100">
+                                <li onClick={() => handleMobileNav('/ruralEducation')} className="px-4 cursor-pointer hover:bg-blue-100">
                                     Rural Educational Advancement Program
                                 </li>
 
-                                <li onClick={() => router.push('/services/luxury-events')} className="px-4 cursor-pointer hover:bg-blue-100">
-                                    Advocacy & Policy Reform
-                                </li>
 
-                                <li onClick={() => router.push('/services/luxury-events')} className="px-4 cursor-pointer hover:bg-blue-100">
+
+                                <li onClick={() => handleMobileNav('/MSMEDevelopment')} className="px-4 cursor-pointer hover:bg-blue-100">
                                     MSME Development
                                 </li>
 
@@ -309,15 +314,15 @@ export default function Navbar() {
                         </div>
                     </li>
 
-                    <li onClick={() => router.push("/blog")} className="hover:text-purple-400 cursor-pointer">
+                    <li onClick={() => handleMobileNav("/ImpactPage")} className="hover:text-purple-400 cursor-pointer">
                         Impact
                     </li>
 
-                    <li onClick={() => router.push("/gallery")} className="hover:text-purple-400 cursor-pointer">
+                    <li onClick={() => handleMobileNav("/blog")} className="hover:text-purple-400 cursor-pointer">
                         Blogs
                     </li>
 
-                    <li onClick={() => router.push("/contact")} className="hover:text-purple-400 cursor-pointer">
+                    <li onClick={() => handleMobileNav("/ContactPage")} className="hover:text-purple-400 cursor-pointer">
                         Contact
                     </li>
                 </ul>
@@ -325,7 +330,7 @@ export default function Navbar() {
                 <div className="flex flex-col items-start pl-4 pb-4 gap-3">
 
                     <button
-                        onClick={() => router.push("/get-a-quote")}
+                        onClick={() => handleMobileNav("/RegisterPage")}
                         className="px-5 py-2 border-3 border-[#6e693d] font-semibold cursor-pointer text-xm md:text-sm xl:text-lg text-[#85783e] rounded-full hover:bg-[#232d45] hover:text-white transition"
                     >
                         Get Involve

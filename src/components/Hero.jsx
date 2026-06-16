@@ -79,24 +79,47 @@ export default function Hero() {
           </motion.p>
         </motion.div>
 
-        {/* MOBILE IMAGE */}
-        <motion.div
-          variants={scaleIn}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          className="lg:hidden mt-10 flex justify-center"
-        >
-          <div className="mobile-hero relative w-[280px] h-[320px]">
-            <Image
-              src="/edu1.jpeg"
-              alt="Education"
-              fill
-              priority
-              className="object-cover rounded-xl"
-            />
-          </div>
-        </motion.div>
+       {/* MOBILE IMAGE */}
+<motion.div
+  variants={scaleIn}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.3 }}
+  className="lg:hidden mt-10 flex justify-center"
+>
+  <div className="relative w-[300px] h-[360px]">
+    
+    {/* Background Glow */}
+    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-emerald-500/20 blur-3xl rounded-full" />
+
+    {/* Decorative Circle */}
+    <div className="absolute -top-4 -right-4 w-20 h-20 bg-blue-600/10 rounded-full border border-blue-500/20" />
+
+    {/* Main Image Card */}
+    <div className="relative h-full overflow-hidden rounded-3xl shadow-2xl border border-white/10 bg-white">
+      <Image
+        src="/edu1.jpeg"
+        alt="Education"
+        fill
+        priority
+        className="object-cover"
+      />
+
+      {/* Overlay Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+      {/* Caption */}
+      <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
+        <p className="text-sm font-medium text-blue-300">
+          Empowering Education
+        </p>
+        <h3 className="text-xl font-bold">
+          Building Future Leaders
+        </h3>
+      </div>
+    </div>
+  </div>
+</motion.div>
 
         {/* DESKTOP GALLERY */}
         <motion.div

@@ -55,7 +55,7 @@ export default function StatsSection() {
               className="relative flex items-center justify-center py-16 group"
             >
               {/* Animated Background Number */}
-              <span className="absolute text-[3rem] md:text-[6rem] font-serif text-white/6 leading-none select-none">
+              <span className="absolute text-[3rem] md:text-[6rem] font-serif text-white/40 leading-none select-none">
                 <CountUp value={stat.number} isInView={inView} />
               </span>
 

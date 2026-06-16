@@ -33,7 +33,7 @@ export default function FeatureBar() {
   ];
 
   return (
-    <section className="relative z-30 px-4 lg:px-8 -mt-16">
+    <section className="relative z-30 px-4 lg:px-8 -mb-23">
       <div className="max-w-7xl mx-auto">
 
         <div className="bg-[#171717] rounded-[40px] shadow-2xl overflow-hidden">
