@@ -97,6 +97,7 @@ export default function Navbar() {
     const [aboutOpen, setAboutOpen] = useState(false)
     const [programOpen, setProgramOpen] = useState(false)
 
+
     const [activeAbout, setActiveAbout] = useState(0)
     const [activeProgram, setActiveProgram] = useState(0)
     const [searchOpen, setSearchOpen] = useState(false);
@@ -214,7 +215,7 @@ export default function Navbar() {
             </div>
             {/* ================= MOBILE MENU ================= */}
             <div
-                className={`fixed top-0 right-0  left-0 bg-gray-50 z-50 shadow-lg transform transition-transform duration-500 ${menuOpen ? "translate-x-0" : "translate-x-full"
+                className={`fixed top-0 right-0  left-0 py-12 bg-gray-50 z-50 shadow-lg transform transition-transform duration-500 ${menuOpen ? "translate-x-0" : "translate-x-full"
                     }`}
             >
                 <div className="flex justify-between items-center p-6 border-b">
@@ -231,15 +232,15 @@ export default function Navbar() {
                     {/* ABOUT */}
                     <li>
                         <div
-                            onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                            onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
                             className="flex justify-between items-center cursor-pointer"
                         >
                             About us
-                            <span>{mobileServicesOpen ? "−" : "+"}</span>
+                            <span>{mobileAboutOpen ? "−" : "+"}</span>
                         </div>
 
                         <div
-                            className={`overflow-hidden transition-all duration-300 ${mobileServicesOpen ? "max-h-60 mt-2" : "max-h-0"
+                            className={`overflow-hidden transition-all duration-300 ${mobileAboutOpen ? "max-h-96 mt-2" : "max-h-0"
                                 }`}
                         >
                             <ul className="pl-4 text-gray-600 text-sm flex flex-col gap-2">
@@ -263,7 +264,7 @@ export default function Navbar() {
                                     Management Team
                                 </li>
 
-                                <li onClick={() => handleMobileNav('/reportsPublications')} className="px-4 cursor-pointer hover:bg-blue-100">
+                                <li onClick={() => handleMobileNav('/ReportsPublications')} className="px-4 cursor-pointer hover:bg-blue-100">
                                     Reports & Publications
                                 </li>
 
@@ -299,7 +300,7 @@ export default function Navbar() {
                                     Entrepreneurship & Skills Development
                                 </li>
 
-                                <li onClick={() => handleMobileNav('/ruralEducation')} className="px-4 cursor-pointer hover:bg-blue-100">
+                                <li onClick={() => handleMobileNav('/ruralEducational')} className="px-4 cursor-pointer hover:bg-blue-100">
                                     Rural Educational Advancement Program
                                 </li>
 
@@ -592,7 +593,7 @@ export default function Navbar() {
                         {/* MOBILE MENU */}
                         <div
                             onClick={() => setMenuOpen(true)}
-                            className="lg:hidden cursor-pointer text-2xl"
+                            className="lg:hidden cursor-pointer -mr-8 text-2xl"
                         >
                             ☰
                         </div>
